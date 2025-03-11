@@ -7,6 +7,7 @@
 # Tools
 
 - ZenML to create pipelne and it is a MLOPs framework 
+
 - Julius: AI Data Analysis - Chat with your files and get expert-level insights in seconds and it is like Excel, Python and ChatGPT in one tool
 https://julius.ai/ 
 
