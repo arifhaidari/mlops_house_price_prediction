@@ -6,12 +6,15 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder, StandardScaler
 
 # Setup logging configuration
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Abstract Base Class for Feature Engineering Strategy
 # ----------------------------------------------------
 # This class defines a common interface for different feature engineering strategies.
 # Subclasses must implement the apply_transformation method.
+
+
 class FeatureEngineeringStrategy(ABC):
     @abstractmethod
     def apply_transformation(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -50,7 +53,8 @@ class LogTransformation(FeatureEngineeringStrategy):
         Returns:
         pd.DataFrame: The dataframe with log-transformed features.
         """
-        logging.info(f"Applying log transformation to features: {self.features}")
+        logging.info(
+            f"Applying log transformation to features: {self.features}")
         df_transformed = df.copy()
         for feature in self.features:
             df_transformed[feature] = np.log1p(
@@ -86,7 +90,8 @@ class StandardScaling(FeatureEngineeringStrategy):
         """
         logging.info(f"Applying standard scaling to features: {self.features}")
         df_transformed = df.copy()
-        df_transformed[self.features] = self.scaler.fit_transform(df[self.features])
+        df_transformed[self.features] = self.scaler.fit_transform(
+            df[self.features])
         logging.info("Standard scaling completed.")
         return df_transformed
 
@@ -120,7 +125,8 @@ class MinMaxScaling(FeatureEngineeringStrategy):
             f"Applying Min-Max scaling to features: {self.features} with range {self.scaler.feature_range}"
         )
         df_transformed = df.copy()
-        df_transformed[self.features] = self.scaler.fit_transform(df[self.features])
+        df_transformed[self.features] = self.scaler.fit_transform(
+            df[self.features])
         logging.info("Min-Max scaling completed.")
         return df_transformed
 
@@ -155,7 +161,8 @@ class OneHotEncoding(FeatureEngineeringStrategy):
             self.encoder.fit_transform(df[self.features]),
             columns=self.encoder.get_feature_names_out(self.features),
         )
-        df_transformed = df_transformed.drop(columns=self.features).reset_index(drop=True)
+        df_transformed = df_transformed.drop(
+            columns=self.features).reset_index(drop=True)
         df_transformed = pd.concat([df_transformed, encoded_df], axis=1)
         logging.info("One-hot encoding completed.")
         return df_transformed
@@ -176,7 +183,8 @@ class FeatureEngineer:
 
     def set_strategy(self, strategy: FeatureEngineeringStrategy):
         """
-        Sets a new strategy for the FeatureEngineer.
+        Sets a new strategy for the FeatureEngineer. 
+        This method is used to obsolete the old strategy and set a new one 
 
         Parameters:
         strategy (FeatureEngineeringStrategy): The new strategy to be used for feature engineering.

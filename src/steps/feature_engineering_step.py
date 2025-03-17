@@ -28,7 +28,8 @@ def feature_engineering_step(
     elif strategy == "onehot_encoding":
         engineer = FeatureEngineer(OneHotEncoding(features))
     else:
-        raise ValueError(f"Unsupported feature engineering strategy: {strategy}")
+        raise ValueError(
+            f"Unsupported feature engineering strategy: {strategy}")
 
     transformed_df = engineer.apply_feature_engineering(df)
     return transformed_df

@@ -23,7 +23,10 @@ class ZipDataIngestor(DataIngestor):
 
         # Extract the zip file
         with zipfile.ZipFile(file_path, "r") as zip_ref:
+            # create new folder
             zip_ref.extractall("extracted_data")
+            # to store in the same place where the zip is
+            # zip_ref.extractall(file_path)
 
         # Find the extracted CSV file (assuming there is one CSV file inside the zip)
         extracted_files = os.listdir("extracted_data")
@@ -70,3 +73,4 @@ if __name__ == "__main__":
     # # Now df contains the DataFrame from the extracted CSV
     # print(df.head())  # Display the first few rows of the DataFrame
     pass
+

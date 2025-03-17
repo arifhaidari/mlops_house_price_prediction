@@ -1,20 +1,21 @@
 # House Prediction (Under Development)
 
-- apply all the MLOPs principles and practices 
+- apply all the MLOPs principles and practices
 - core ML
-- MLOPs priniciples  
+- MLOPs priniciples
 
 # Tools
 
-- ZenML to create pipelne and it is a MLOPs framework 
+- ZenML to create pipelne and it is a MLOPs framework
 
 - Julius: AI Data Analysis - Chat with your files and get expert-level insights in seconds and it is like Excel, Python and ChatGPT in one tool
-https://julius.ai/ 
+  https://julius.ai/
 
 # Flow
-Install ZenML - https://docs.zenml.io/getting-started/installation 
 
-zenml integration install mlflow -y 
+Install ZenML - https://docs.zenml.io/getting-started/installation
+
+zenml integration install mlflow -y
 
 The project can only be executed with a ZenML stack that has an MLflow experiment tracker and model deployer as a component. Configuring a new stack with the two components are as follows:
 
@@ -26,13 +27,10 @@ zenml stack register local-mlflow-stack -a default -o default -d mlflow -e mlflo
 # Design patterns
 
 - Factory design pattern (e.g. Coffe -> Expresso, Latte, Cuppiciono):
-https://github.com/arifhaidari/mlops_house_price_prediction/blob/main/reports/factory_design_pattern.py
+  https://github.com/arifhaidari/mlops_house_price_prediction/blob/main/reports/factory_design_pattern.py
 
 - Strategy pattern
 
-
 # References & Citation
 
-this content is created using large language models, different sources in internet and also the following a course on YouTube:
-https://www.youtube.com/watch?v=o6vbe5G7xNo&t=133s
-
+this content is created using large language models, different sources in internet especially medium and freecodecamp

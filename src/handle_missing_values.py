@@ -88,6 +88,7 @@ class FillMissingValuesStrategy(MissingValueHandlingStrategy):
             df_cleaned[numeric_columns] = df_cleaned[numeric_columns].fillna(
                 df[numeric_columns].median()
             )
+        # The mode is the number that occurs most often in a data set.
         elif self.method == "mode":
             for column in df_cleaned.columns:
                 df_cleaned[column].fillna(df[column].mode().iloc[0], inplace=True)
