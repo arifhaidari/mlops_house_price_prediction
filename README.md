@@ -34,5 +34,11 @@ zenml stack register local-mlflow-stack -a default -o default -d mlflow -e mlflo
 # References & Citation
 
 - this content is created using large language models, different sources in internet especially medium and freecodecamp
+
 - https://www.kaggle.com/code/tomasmantero/predicting-house-prices-keras-ann
+
 - solution with pytorch: https://www.kaggle.com/code/ajinilpatel/house-price-prediction-deep-learning-pytorch
+
+- Tensorflow Decision forest - https://www.kaggle.com/code/gusthema/house-prices-prediction-using-tfdf
+
+- Best source - https://www.kaggle.com/code/alijalili/house-prices-modeling
